@@ -1,6 +1,6 @@
 type token =
-  |ILLEGAL
   |EOF
+  |ERROR of string
 
   (*Braces and Parenthesis*)
   |LPAREN
@@ -21,14 +21,17 @@ type token =
   |LESS_EQUAL
   |BANG
   |BANG_EQUAL
+  |QUESTION_MARK
 
   (*Delimiters*)
   |SEMICOLON
   |COMMA
+  |DOT
 
   (*Keywords*)
-  |LET
+  |VAR
   |FUNCTION
+  |CLASS
   |IF
   |ELSE
   |AND
@@ -36,11 +39,15 @@ type token =
   |RETURN
   |NIL
   |WHILE
+  |FOR
   |TRUE
   |FALSE
+  |PRINT
+  |SUPER
+  |THIS
 
   (*Identifiers and literals*)
-  |INTEGER of int
+  |NUMBER of float
   |IDENTIFIER of string
   |STRING of string
 
